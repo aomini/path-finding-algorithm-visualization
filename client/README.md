@@ -537,8 +537,8 @@ export default a;
 ```
 
 ## Prettier & typescript
-Sometime, prettier & typescript fight with eachother. So, we want typescript to be in sync with our prettier configs. So, we have to add one more plugin.
-(UPDATE REQUIRED WHY)
+Sometime, prettier & typescript conflicts with eachother. So, we want typescript to be in sync with our prettier configs. So, we have to add one more plugin.
+(UPDATE REQUIRED HOW THEY CONFLICT)
 
 **.eslintrc**
 ```
@@ -554,7 +554,11 @@ Sometime, prettier & typescript fight with eachother. So, we want typescript to 
                 "plugin:@typescript-eslint/eslint-recommended",
                 "plugin:@typescript-eslint/recommended",
                 "eslint-config-prettier/@typescript-eslint"
-            ]
+            ],
+            "rules" : {
+            	// Removes the ts interface name prefix rule
+               "@typescript-eslint/interface-name-prefix" : "off"
+            }
         }
     ]
 ```
